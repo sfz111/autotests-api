@@ -9,8 +9,8 @@ async def echo(websocket: ServerConnection):
         print(f"Получено сообщение от пользователя: {message}")
         response = f"Сообщение пользователя: {message}"
 
-        for _ in range(5):
-            await websocket.send(response)
+        for index in range(5):
+            await websocket.send(f"{index + 1}: Сообщение пользователя: {response}", )
 
 
 async def main():
